@@ -1,0 +1,94 @@
+{
+  "project_info": {
+    "project_number": "235184098201",
+    "firebase_url": "https://pubg-tournament-455ce.firebaseio.com",
+    "project_id": "pubg-tournament-455ce",
+    "storage_bucket": "pubg-tournament-455ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:235184098201:android:5906051750706610",
+        "android_client_info": {
+          "package_name": "com.example.pub2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "235184098201-s82mfktogfh4vurip0i08kjfhb7f9f1s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pub2",
+            "certificate_hash": "c8b6454457b4d668538f313a98f10ea69138b6d4"
+          }
+        },
+        {
+          "client_id": "235184098201-45atuao7a0vel1lgpf25uiae0e85chhp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pub2",
+            "certificate_hash": "1790c8b48a727804b6d98ad19d016eaa6ca8ef8f"
+          }
+        },
+        {
+          "client_id": "235184098201-aa7u11n0u9jkfn5hdnslekuctnhrij2c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVB3Bg-bhhfmIGv24M2ItTgQZy8QMpURo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "235184098201-aa7u11n0u9jkfn5hdnslekuctnhrij2c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:235184098201:android:bdcc287e017944ac",
+        "android_client_info": {
+          "package_name": "com.jungvolkz.pubgtournament"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "235184098201-aa7u11n0u9jkfn5hdnslekuctnhrij2c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVB3Bg-bhhfmIGv24M2ItTgQZy8QMpURo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
