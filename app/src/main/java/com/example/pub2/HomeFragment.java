@@ -7,18 +7,21 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.pub2.Adapter.MatchAdapter;
 import com.example.pub2.model.Match;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,6 +29,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomeFragment extends Fragment{
 
@@ -73,57 +79,36 @@ public class HomeFragment extends Fragment{
             }
         });
 
-        Query query = databaseReference.child("match");
+        final List<Match> list = new ArrayList<>();
+        Query query = databaseReference.child("match").orderByKey();
 
-        FirebaseRecyclerOptions<Match> options =
-                new FirebaseRecyclerOptions.Builder<Match>()
-                        .setQuery(query, Match.class)
-                        .build();
-
-        FirebaseRecyclerAdapter firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Match, MyViewHolder>(options) {
+        query.addValueEventListener(new ValueEventListener() {
             @Override
-            protected void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull Match model) {
-                Picasso.get().load(model.getPhoto()).into(holder.imageView);
-                holder.hostTextView.setText(model.getHost());
-                holder.titleTextView.setText(model.getTitle());
-                holder.descriptionTextView.setText(model.getDescription());
-                holder.registeredTextView.setText(model.getRegistered());
-                holder.dateTimeTextView.setText(model.getDate() + " | " + model.getTime());
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for(DataSnapshot ds : dataSnapshot.getChildren()) {
+                    Match match = new Match();
+                    match.setHost(ds.child("host").getValue().toString());
+                    match.setPhoto(ds.child("photo").getValue().toString());
+                    match.setTitle(ds.child("title").getValue().toString());
+                    match.setDescription(ds.child("description").getValue().toString());
+                    match.setRegistered(ds.child("registered").getValue().toString());
+                    match.setDate(ds.child("date").getValue().toString());
+
+                    list.add(match);
+                }
+
+                MatchAdapter matchAdapter = new MatchAdapter(getContext(), list);
+                recyclerView.setAdapter(matchAdapter);
             }
 
-            @NonNull
             @Override
-            public HomeFragment.MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-                View view = LayoutInflater.from(getContext()).inflate(R.layout.layout_maatch, viewGroup, false);
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                return new MyViewHolder(view);
             }
-        };
+        });
 
-        recyclerView.setAdapter(firebaseRecyclerAdapter);
 
         return view;
-    }
-
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-
-        ImageView imageView;
-        TextView hostTextView;
-        TextView titleTextView;
-        TextView descriptionTextView;
-        TextView registeredTextView;
-        TextView dateTimeTextView;
-
-        public MyViewHolder(@NonNull View itemView) {
-            super(itemView);
-
-            imageView = itemView.findViewById(R.id.bgImageView);
-            hostTextView = itemView.findViewById(R.id.hostTextview);
-            titleTextView = itemView.findViewById(R.id.titleTextView);
-            descriptionTextView = itemView.findViewById(R.id.descriptionTextview);
-            registeredTextView = itemView.findViewById(R.id.registeredTextView);
-            dateTimeTextView = itemView.findViewById(R.id.dateTimeTextView);
-        }
     }
 
 }

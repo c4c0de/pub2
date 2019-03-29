@@ -1,0 +1,71 @@
+package com.example.pub2.Adapter;
+
+import android.content.Context;
+import android.support.annotation.NonNull;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.example.pub2.R;
+import com.example.pub2.model.Match;
+import com.squareup.picasso.Picasso;
+
+import java.util.List;
+
+public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.MyViewHolder> {
+
+    private Context context;
+    private List<Match> matchList;
+
+    public MatchAdapter(Context context, List<Match> matchList) {
+        this.context = context;
+        this.matchList = matchList;
+    }
+
+    @NonNull
+    @Override
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        View view = LayoutInflater.from(context).inflate(R.layout.layout_maatch, viewGroup, false);
+        return new MyViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
+        Picasso.get().load(matchList.get(i).getPhoto()).into(myViewHolder.imageView);
+        myViewHolder.hostTextView.setText(matchList.get(i).getHost());
+        myViewHolder.titleTextView.setText(matchList.get(i).getTitle());
+        myViewHolder.descriptionTextView.setText(matchList.get(i).getDescription());
+        myViewHolder.registeredTextView.setText(matchList.get(i).getRegistered());
+        myViewHolder.dateTimeTextView.setText(matchList.get(i).getDate());
+    }
+
+    @Override
+    public int getItemCount() {
+        return matchList.size();
+    }
+
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+
+        ImageView imageView;
+        TextView hostTextView;
+        TextView titleTextView;
+        TextView descriptionTextView;
+        TextView registeredTextView;
+        TextView dateTimeTextView;
+
+        public MyViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+            imageView = itemView.findViewById(R.id.bgImageView);
+            hostTextView = itemView.findViewById(R.id.hostTextview);
+            titleTextView = itemView.findViewById(R.id.titleTextView);
+            descriptionTextView = itemView.findViewById(R.id.descriptionTextview);
+            registeredTextView = itemView.findViewById(R.id.registeredTextView);
+            dateTimeTextView = itemView.findViewById(R.id.dateTimeTextView);
+
+        }
+    }
+}
