@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity
 
         BottomNavigationView navigation =  findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(this);
+
+        loadFragment(new HomeFragment());
     }
 
     private boolean loadFragment(Fragment fragment){
@@ -51,11 +53,11 @@ public class MainActivity extends AppCompatActivity
                 fragment = new NotifiacationFragment();
                 break;
 
-            case R.id.navigation_dashboard:
+            case R.id.navigation_wallet:
                 fragment = new WalletFragment();
                 break;
         }
 
-        return false;
+        return loadFragment(fragment);
     }
 }
