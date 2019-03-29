@@ -40,6 +40,7 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.MyViewHolder
         myViewHolder.descriptionTextView.setText(matchList.get(i).getDescription());
         myViewHolder.registeredTextView.setText(matchList.get(i).getRegistered());
         myViewHolder.dateTimeTextView.setText(matchList.get(i).getDate());
+        myViewHolder.timeTextView.setText(matchList.get(i).getTime());
     }
 
     @Override
@@ -55,6 +56,7 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.MyViewHolder
         TextView descriptionTextView;
         TextView registeredTextView;
         TextView dateTimeTextView;
+        TextView timeTextView;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -65,6 +67,7 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.MyViewHolder
             descriptionTextView = itemView.findViewById(R.id.descriptionTextview);
             registeredTextView = itemView.findViewById(R.id.registeredTextView);
             dateTimeTextView = itemView.findViewById(R.id.dateTimeTextView);
+            timeTextView = itemView.findViewById(R.id.timeTextView);
 
         }
     }

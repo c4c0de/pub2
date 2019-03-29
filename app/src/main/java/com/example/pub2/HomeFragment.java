@@ -1,6 +1,7 @@
 package com.example.pub2;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -50,6 +51,10 @@ public class HomeFragment extends Fragment{
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
+        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
+            startActivity(new Intent(getContext(), SplashScreenActivity.class));
+        }
+
         imageView = view.findViewById(R.id.imageView);
         textView = view.findViewById(R.id.textView);
         recyclerView = view.findViewById(R.id.recyclerView);
@@ -93,6 +98,7 @@ public class HomeFragment extends Fragment{
                     match.setDescription(ds.child("description").getValue().toString());
                     match.setRegistered(ds.child("registered").getValue().toString());
                     match.setDate(ds.child("date").getValue().toString());
+                    match.setTime(ds.child("time").getValue().toString());
 
                     list.add(match);
                 }

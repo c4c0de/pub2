@@ -28,16 +28,13 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         FirebaseApp.initializeApp(this);
 
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
-        if (user == null) {
-            startActivity(new Intent(this, SplashScreenActivity.class));
-        } else {
-
+        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
             BottomNavigationView navigation =  findViewById(R.id.navigation);
             navigation.setOnNavigationItemSelectedListener(this);
 
             loadFragment(new HomeFragment());
+        } else {
+            startActivity(new Intent(this, SplashScreenActivity.class));
         }
 
     }

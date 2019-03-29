@@ -7,100 +7,108 @@
 
     <android.support.v7.widget.CardView
         android:layout_width="wrap_content"
-        android:layout_height="250dp"
-        app:cardCornerRadius="10dp"
-        android:padding="20dp">
+        android:layout_height="280dp"
+        android:padding="20dp"
+        app:cardCornerRadius="10dp">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ImageView
-            android:id="@+id/bgImageView"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/pubg" />
+            android:layout_height="match_parent">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#B2181818" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/hostTextview"
+            <ImageView
+                android:id="@+id/bgImageView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="host name"
-                android:textAlignment="center" />
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pubg" />
 
-            <TextView
-                android:id="@+id/titleTextView"
-                style="bold"
+            <View
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text="MATCH TITLE HERE"
-                android:textAlignment="center"
-                android:textColor="#f2f2f2"
-                android:textSize="30dp" />
-
-
-            <TextView
-                android:id="@+id/descriptionTextview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:paddingBottom="10dp"
-                android:text="Match description here"
-                android:textAlignment="center"
-                android:textColor="#f2f2f2"
-                android:textSize="20dp" />
-
-            <TextView
-                android:id="@+id/registeredTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="6"
-                android:textSize="50sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="registered" />
+                android:layout_height="match_parent"
+                android:background="#B2181818" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/dateTimeTextView"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/hostTextview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="host name"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/titleTextView"
+                    style="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="MATCH TITLE HERE"
+                    android:textAlignment="center"
+                    android:textColor="#f2f2f2"
+                    android:textSize="30dp" />
+
+
+                <TextView
+                    android:id="@+id/descriptionTextview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Match description here"
+                    android:textAlignment="center"
+                    android:textColor="#f2f2f2"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/registeredTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="6"
+                    android:textSize="50sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="registered"
+                    android:layout_marginBottom="10dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="5dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="Date and Time" />
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/dateTimeTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center_vertical"
+                        android:text="Date and Time" />
+
+                    <TextView
+                        android:id="@+id/timeTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Time"
+                        android:gravity="end"
+                        android:layout_marginRight="10dp"/>
 
 
+                </LinearLayout>
 
             </LinearLayout>
 
-        </LinearLayout>
-
-    </FrameLayout>
+        </FrameLayout>
 
     </android.support.v7.widget.CardView>
 
