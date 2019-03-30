@@ -9,19 +9,10 @@ public class Match {
     private String date;
     private String registered;
     private String host;
+    private String fee;
 
     //Constructors
     public Match() {}
-
-    public Match(String title, String description, String photo, String time, String date, String registered, String host) {
-        this.title = title;
-        this.description = description;
-        this.photo = photo;
-        this.time = time;
-        this.date = date;
-        this.registered = registered;
-        this.host = host;
-    }
 
     //Getters and setters
 
@@ -79,5 +70,13 @@ public class Match {
 
     public void setHost(String host) {
         this.host = host;
+    }
+
+    public String getFee() {
+        return fee;
+    }
+
+    public void setFee(String fee) {
+        this.fee = fee;
     }
 }

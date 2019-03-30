@@ -38,7 +38,7 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.MyViewHolder
         myViewHolder.hostTextView.setText(matchList.get(i).getHost());
         myViewHolder.titleTextView.setText(matchList.get(i).getTitle());
         myViewHolder.descriptionTextView.setText(matchList.get(i).getDescription());
-        myViewHolder.registeredTextView.setText(matchList.get(i).getRegistered());
+        myViewHolder.feeTextview.setText("₹" + matchList.get(i).getFee());
         myViewHolder.dateTimeTextView.setText(matchList.get(i).getDate());
         myViewHolder.timeTextView.setText(matchList.get(i).getTime());
     }
@@ -54,7 +54,7 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.MyViewHolder
         TextView hostTextView;
         TextView titleTextView;
         TextView descriptionTextView;
-        TextView registeredTextView;
+        TextView feeTextview;
         TextView dateTimeTextView;
         TextView timeTextView;
 
@@ -65,7 +65,7 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.MyViewHolder
             hostTextView = itemView.findViewById(R.id.hostTextview);
             titleTextView = itemView.findViewById(R.id.titleTextView);
             descriptionTextView = itemView.findViewById(R.id.descriptionTextview);
-            registeredTextView = itemView.findViewById(R.id.registeredTextView);
+            feeTextview = itemView.findViewById(R.id.registeredTextView);
             dateTimeTextView = itemView.findViewById(R.id.dateTimeTextView);
             timeTextView = itemView.findViewById(R.id.timeTextView);
 

@@ -34,9 +34,11 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class HomeFragment extends Fragment{
 
-    private ImageView imageView;
+    private CircleImageView imageView;
     private TextView textView;
     private RecyclerView recyclerView;
 
@@ -99,6 +101,7 @@ public class HomeFragment extends Fragment{
                     match.setRegistered(ds.child("registered").getValue().toString());
                     match.setDate(ds.child("date").getValue().toString());
                     match.setTime(ds.child("time").getValue().toString());
+                    match.setFee(ds.child("fee").getValue().toString());
 
                     list.add(match);
                 }
