@@ -41,6 +41,8 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.MyViewHolder
         myViewHolder.feeTextview.setText("₹" + matchList.get(i).getFee());
         myViewHolder.dateTimeTextView.setText(matchList.get(i).getDate());
         myViewHolder.timeTextView.setText(matchList.get(i).getTime());
+
+        
     }
 
     @Override

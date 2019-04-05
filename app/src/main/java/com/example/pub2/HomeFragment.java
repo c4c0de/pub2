@@ -17,9 +17,6 @@ import android.widget.TextView;
 
 import com.example.pub2.Adapter.MatchAdapter;
 import com.example.pub2.model.Match;
-import com.firebase.ui.auth.AuthUI;
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
