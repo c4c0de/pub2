@@ -9,6 +9,7 @@ public class Match {
     private String date;
     private String registered;
     private String killreward;
+    private String winreward;
     private String fee;
 
     //Constructors
@@ -68,9 +69,13 @@ public class Match {
         return killreward;
     }
 
-    public void setKillreward(String reward) {
+    public void setKillreward(String killreward) {
         this.killreward = killreward;
     }
+
+    public String getWinreward() { return winreward; }
+
+    public void setWinreward(String winreward) { this.winreward = winreward;}
 
     public String getFee() {
         return fee;

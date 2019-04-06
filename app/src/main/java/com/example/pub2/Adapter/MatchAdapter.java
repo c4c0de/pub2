@@ -36,7 +36,7 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.MyViewHolder
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
         Picasso.get().load(matchList.get(i).getPhoto()).into(myViewHolder.imageView);
         myViewHolder.killrewardTextView.setText(matchList.get(i).getKillreward());
-        myViewHolder.winrewardTextView.settext(matchList.get(i).getWinreward())
+        myViewHolder.winrewardTextView.setText(matchList.get(i).getWinreward());
         myViewHolder.titleTextView.setText(matchList.get(i).getTitle());
         myViewHolder.descriptionTextView.setText(matchList.get(i).getDescription());
         myViewHolder.feeTextview.setText("Entry : ₹" + matchList.get(i).getFee());
@@ -53,7 +53,7 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.MyViewHolder
 
         ImageView imageView;
         TextView killrewardTextView;
-        TextView winreward;
+        TextView winrewardTextView;
         TextView titleTextView;
         TextView descriptionTextView;
         TextView feeTextview;
@@ -65,7 +65,7 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.MyViewHolder
 
             imageView = itemView.findViewById(R.id.bgImageView);
             killrewardTextView = itemView.findViewById(R.id.killrewardTextview);
-            winrewardTextView = itemView.findViewById(R.id.winrewardTextview)
+            winrewardTextView = itemView.findViewById(R.id.winrewardTextview);
             titleTextView = itemView.findViewById(R.id.titleTextView);
             descriptionTextView = itemView.findViewById(R.id.descriptionTextview);
             feeTextview = itemView.findViewById(R.id.registeredTextView);
