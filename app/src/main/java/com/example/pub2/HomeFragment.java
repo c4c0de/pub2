@@ -91,7 +91,7 @@ public class HomeFragment extends Fragment{
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for(DataSnapshot ds : dataSnapshot.getChildren()) {
                     Match match = new Match();
-                    match.setHost(ds.child("host").getValue().toString());
+                    match.setReward(ds.child("reward").getValue().toString());
                     match.setPhoto(ds.child("photo").getValue().toString());
                     match.setTitle(ds.child("title").getValue().toString());
                     match.setDescription(ds.child("description").getValue().toString());

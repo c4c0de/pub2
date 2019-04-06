@@ -35,14 +35,13 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.MyViewHolder
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
         Picasso.get().load(matchList.get(i).getPhoto()).into(myViewHolder.imageView);
-        myViewHolder.hostTextView.setText(matchList.get(i).getHost());
+        myViewHolder.killrewardTextView.setText(matchList.get(i).getKillreward());
+        myViewHolder.winrewardTextView.settext(matchList.get(i).getWinreward())
         myViewHolder.titleTextView.setText(matchList.get(i).getTitle());
         myViewHolder.descriptionTextView.setText(matchList.get(i).getDescription());
-        myViewHolder.feeTextview.setText("₹" + matchList.get(i).getFee());
+        myViewHolder.feeTextview.setText("Entry : ₹" + matchList.get(i).getFee());
         myViewHolder.dateTimeTextView.setText(matchList.get(i).getDate());
         myViewHolder.timeTextView.setText(matchList.get(i).getTime());
-
-        
     }
 
     @Override
@@ -53,7 +52,8 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.MyViewHolder
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imageView;
-        TextView hostTextView;
+        TextView killrewardTextView;
+        TextView winreward;
         TextView titleTextView;
         TextView descriptionTextView;
         TextView feeTextview;
@@ -64,7 +64,8 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.MyViewHolder
             super(itemView);
 
             imageView = itemView.findViewById(R.id.bgImageView);
-            hostTextView = itemView.findViewById(R.id.hostTextview);
+            killrewardTextView = itemView.findViewById(R.id.killrewardTextview);
+            winrewardTextView = itemView.findViewById(R.id.winrewardTextview)
             titleTextView = itemView.findViewById(R.id.titleTextView);
             descriptionTextView = itemView.findViewById(R.id.descriptionTextview);
             feeTextview = itemView.findViewById(R.id.registeredTextView);

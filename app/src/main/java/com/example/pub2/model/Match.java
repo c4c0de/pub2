@@ -8,7 +8,7 @@ public class Match {
     private String time;
     private String date;
     private String registered;
-    private String host;
+    private String killreward;
     private String fee;
 
     //Constructors
@@ -64,12 +64,12 @@ public class Match {
         this.registered = registered;
     }
 
-    public String getHost() {
-        return host;
+    public String getKillreward() {
+        return killreward;
     }
 
-    public void setHost(String host) {
-        this.host = host;
+    public void setKillreward(String reward) {
+        this.killreward = killreward;
     }
 
     public String getFee() {

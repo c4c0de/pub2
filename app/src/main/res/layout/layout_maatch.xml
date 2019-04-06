@@ -33,14 +33,6 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/hostTextview"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="host name"
-                    android:textAlignment="center" />
-
-                <TextView
                     android:id="@+id/titleTextView"
                     style="bold"
                     android:layout_width="match_parent"
@@ -75,29 +67,54 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/killrewardTextview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="killrewards"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/winrewardTextview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:gravity="right"
+                        android:text="winrewards" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_gravity="bottom">
+                    android:layout_gravity="bottom"
+                    android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/dateTimeTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
                         android:layout_marginLeft="10dp"
                         android:layout_marginBottom="5dp"
-                        android:text="Date and Time"
-                        android:layout_gravity="bottom"/>
+                        android:text="Date and Time" />
 
                     <TextView
                         android:id="@+id/timeTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="5dp"
                         android:layout_weight="1"
                         android:gravity="right"
-                        android:text="Time"
-                        android:layout_gravity="bottom"/>
+                        android:text="Time" />
 
 
                 </LinearLayout>
