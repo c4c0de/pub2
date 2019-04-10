@@ -35,8 +35,8 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.MyViewHolder
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
         Picasso.get().load(matchList.get(i).getPhoto()).into(myViewHolder.imageView);
-        myViewHolder.killrewardTextView.setText(matchList.get(i).getKillreward());
-        myViewHolder.winrewardTextView.setText(matchList.get(i).getWinreward());
+        myViewHolder.killrewardTextView.setText("Kill Reward\n₹"+matchList.get(i).getKillreward());
+        myViewHolder.winrewardTextView.setText("Win Reward\n₹"+matchList.get(i).getWinreward());
         myViewHolder.titleTextView.setText(matchList.get(i).getTitle());
         myViewHolder.descriptionTextView.setText(matchList.get(i).getDescription());
         myViewHolder.feeTextview.setText("Entry : ₹" + matchList.get(i).getFee());
