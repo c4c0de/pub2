@@ -68,7 +68,7 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.MyViewHolder
             winrewardTextView = itemView.findViewById(R.id.winrewardTextview);
             titleTextView = itemView.findViewById(R.id.titleTextView);
             descriptionTextView = itemView.findViewById(R.id.descriptionTextview);
-            feeTextview = itemView.findViewById(R.id.registeredTextView);
+            feeTextview = itemView.findViewById(R.id.feeTextView);
             dateTimeTextView = itemView.findViewById(R.id.dateTimeTextView);
             timeTextView = itemView.findViewById(R.id.timeTextView);
 
