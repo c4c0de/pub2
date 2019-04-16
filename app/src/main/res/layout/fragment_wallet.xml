@@ -7,17 +7,16 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/viewBalance"
-        android:gravity="center"
-        android:textSize="50dp"
+        android:id="@+id/balView"
         android:layout_width="400dp"
         android:layout_height="130dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="₹00.00"
+        android:gravity="center"
         android:textColor="@color/colorPrimary"
+        android:textSize="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.937"
