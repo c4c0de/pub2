@@ -1,7 +1,9 @@
 package com.example.pub2.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.pub2.MatchDetailsActivity;
 import com.example.pub2.R;
 import com.example.pub2.model.Match;
 import com.squareup.picasso.Picasso;
@@ -33,7 +36,7 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.MyViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
+    public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, final int i) {
         Picasso.get().load(matchList.get(i).getPhoto()).into(myViewHolder.imageView);
         myViewHolder.killrewardTextView.setText("Kill Reward\n₹"+matchList.get(i).getKillreward());
         myViewHolder.winrewardTextView.setText("Win Reward\n₹"+matchList.get(i).getWinreward());
@@ -42,6 +45,14 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.MyViewHolder
         myViewHolder.feeTextview.setText("Entry : ₹" + matchList.get(i).getFee());
         myViewHolder.dateTimeTextView.setText(matchList.get(i).getDate());
         myViewHolder.timeTextView.setText(matchList.get(i).getTime());
+        myViewHolder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, MatchDetailsActivity.class);
+                intent.putExtra("match_id", matchList.get(i).getMatchid());
+                context.startActivity(new Intent(context, MatchDetailsActivity.class));
+            }
+        });
     }
 
     @Override
@@ -59,6 +70,7 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.MyViewHolder
         TextView feeTextview;
         TextView dateTimeTextView;
         TextView timeTextView;
+        CardView cardView;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -71,7 +83,9 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.MyViewHolder
             feeTextview = itemView.findViewById(R.id.feeTextView);
             dateTimeTextView = itemView.findViewById(R.id.dateTimeTextView);
             timeTextView = itemView.findViewById(R.id.timeTextView);
+            cardView = itemView.findViewById(R.id.cardview);
 
         }
     }
+
 }
