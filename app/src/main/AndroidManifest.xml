@@ -9,7 +9,8 @@
         android:roundIcon="@drawable/highbrowlogo"
         android:supportsRtl="true"
         android:theme="@style/Base.Theme.AppCompat">
-        <activity android:name=".MatchDetailsActivity"></activity>
+        <activity android:name=".ParticipantsActivity"></activity>
+        <activity android:name=".MatchDetailsActivity" />
         <activity android:name=".SplashScreenActivity" />
         <activity android:name=".ProfileCreationActivity" />
         <activity
