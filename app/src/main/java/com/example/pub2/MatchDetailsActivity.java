@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -29,6 +30,7 @@ public class MatchDetailsActivity extends AppCompatActivity {
 
         slotview = findViewById(R.id.slotview);
         final String match_id = getIntent().getStringExtra("match_id");
+
         slotview.setText(slot);
 
         slotview.setOnClickListener(new View.OnClickListener() {
