@@ -29,11 +29,13 @@ public class ProfileCreationActivity extends AppCompatActivity {
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
-        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.submitButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 EditText editText = findViewById(R.id.editText);
                 String name = editText.getText().toString();
+                EditText editText1 = findViewById(R.id.editTextNumber);
+                String phone = editText1.getText().toString();
                 String photo_url;
 
                 if (firebaseUser.getPhotoUrl() == null) {
@@ -43,8 +45,11 @@ public class ProfileCreationActivity extends AppCompatActivity {
                 }
 
                 Map map = new HashMap();
+                map.put("phone", phone);
                 map.put("name", name);
                 map.put("photo_url", photo_url);
+                map.put("balance", "0");
+                map.put("notification","Notification Here");
 
                 databaseReference.child("user").child(firebaseUser.getUid()).updateChildren(map).addOnSuccessListener(new OnSuccessListener() {
                     @Override

@@ -7,9 +7,10 @@ public class Match {
     private String photo;
     private String time;
     private String date;
-    private String registered;
-    private String host;
+    private String killreward;
+    private String winreward;
     private String fee;
+    private String matchid;
 
     //Constructors
     public Match() {}
@@ -56,21 +57,17 @@ public class Match {
         this.date = date;
     }
 
-    public String getRegistered() {
-        return registered;
+    public String getKillreward() {
+        return killreward;
     }
 
-    public void setRegistered(String registered) {
-        this.registered = registered;
+    public void setKillreward(String killreward) {
+        this.killreward = killreward;
     }
 
-    public String getHost() {
-        return host;
-    }
+    public String getWinreward() { return winreward; }
 
-    public void setHost(String host) {
-        this.host = host;
-    }
+    public void setWinreward(String winreward) { this.winreward = winreward;}
 
     public String getFee() {
         return fee;
@@ -78,5 +75,13 @@ public class Match {
 
     public void setFee(String fee) {
         this.fee = fee;
+    }
+
+    public String getMatchid() {
+        return matchid;
+    }
+
+    public void setMatchid(String matchid) {
+        this.matchid = matchid;
     }
 }

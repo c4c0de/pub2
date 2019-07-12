@@ -33,7 +33,11 @@ import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class HomeFragment extends Fragment{
+public class HomeFragment extends Fragment {
+
+    public interface OnClickHomeFragment {
+        void onClick();
+    }
 
     private CircleImageView imageView;
     private TextView textView;
@@ -66,7 +70,7 @@ public class HomeFragment extends Fragment{
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 userName = dataSnapshot.child("name").getValue().toString();
-                if (dataSnapshot.child("photo_url").getValue().toString() != null) {
+                if (dataSnapshot.child("photo_url").getValue() != null) {
                     photo_url = dataSnapshot.child("photo_url").getValue().toString();
                 } else {
                     photo_url = "https://homepages.cae.wisc.edu/~ece533/images/baboon.png";
@@ -91,14 +95,15 @@ public class HomeFragment extends Fragment{
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for(DataSnapshot ds : dataSnapshot.getChildren()) {
                     Match match = new Match();
-                    match.setHost(ds.child("host").getValue().toString());
+                    match.setKillreward(ds.child("killreward").getValue().toString());
+                    match.setWinreward(ds.child("winreward").getValue().toString());
                     match.setPhoto(ds.child("photo").getValue().toString());
                     match.setTitle(ds.child("title").getValue().toString());
                     match.setDescription(ds.child("description").getValue().toString());
-                    match.setRegistered(ds.child("registered").getValue().toString());
                     match.setDate(ds.child("date").getValue().toString());
                     match.setTime(ds.child("time").getValue().toString());
                     match.setFee(ds.child("fee").getValue().toString());
+                    match.setMatchid(ds.getKey());
 
                     list.add(match);
                 }
@@ -116,5 +121,4 @@ public class HomeFragment extends Fragment{
 
         return view;
     }
-
 }
