@@ -6,9 +6,11 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.text.format.Time;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import com.example.pub2.Adapter.MatchAdapter;
 import com.firebase.ui.auth.AuthUI;
@@ -18,10 +20,21 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+
+    private Toolbar toolbar;
+
+    FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+    DatabaseReference databaseReference =  firebaseDatabase.getReference();
+    FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,8 +87,28 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             case R.id.navigation_wallet:
                 fragment = new WalletFragment();
                 break;
+
+            case R.id.navigation_users:
+                fragment = new UserListFragment();
+                break;
         }
 
         return loadFragment(fragment);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        databaseReference.child("user").child(firebaseUser.getUid()).child("last_seen").setValue("online");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm", Locale.getDefault());
+        String currentDateandTime = sdf.format(new Date());
+
+        databaseReference.child("user").child(firebaseUser.getUid()).child("last_seen").setValue(currentDateandTime);
     }
 }
