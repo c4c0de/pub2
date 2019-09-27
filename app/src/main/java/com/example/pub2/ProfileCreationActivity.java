@@ -50,7 +50,9 @@ public class ProfileCreationActivity extends AppCompatActivity {
                 map.put("photo_url", photo_url);
                 map.put("balance", "0");
                 map.put("notification","Notification Here");
-
+                //user okke evide poyi??
+                //user creation alle id,  aah, ath ippo firebasil write aavunille?
+                //onnukoodi nook runok
                 databaseReference.child("user").child(firebaseUser.getUid()).updateChildren(map).addOnSuccessListener(new OnSuccessListener() {
                     @Override
                     public void onSuccess(Object o) {

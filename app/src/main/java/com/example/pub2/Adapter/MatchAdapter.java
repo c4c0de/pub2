@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +23,7 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.MyViewHolder
 
     private Context context;
     private List<Match> matchList;
+    private static final String TAG = "mylog";
 
     public MatchAdapter(Context context, List<Match> matchList) {
         this.context = context;
@@ -49,6 +51,7 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.MyViewHolder
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, MatchDetailsActivity.class);
+                Log.d(TAG, "onClick: Match id: " + matchList.get(i).getMatchid());
                 intent.putExtra("match_id", matchList.get(i).getMatchid());
                 context.startActivity(new Intent(context, MatchDetailsActivity.class));
             }
@@ -87,5 +90,4 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.MyViewHolder
 
         }
     }
-
 }
