@@ -53,7 +53,7 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.MyViewHolder
                 Intent intent = new Intent(context, MatchDetailsActivity.class);
                 Log.d(TAG, "onClick: Match id: " + matchList.get(i).getMatchid());
                 intent.putExtra("match_id", matchList.get(i).getMatchid());
-                context.startActivity(new Intent(context, MatchDetailsActivity.class));
+                context.startActivity(intent);
             }
         });
     }
