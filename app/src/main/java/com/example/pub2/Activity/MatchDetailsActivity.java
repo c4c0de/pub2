@@ -1,13 +1,13 @@
-package com.example.pub2;
+package com.example.pub2.Activity;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.pub2.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -18,10 +18,10 @@ public class MatchDetailsActivity extends AppCompatActivity {
 
     private TextView slotview;
 
-    FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-    DatabaseReference databaseReference =  firebaseDatabase.getReference();
+    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+    private DatabaseReference databaseReference =  firebaseDatabase.getReference();
 
-    private String slot;
+    private String slot = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,7 @@ public class MatchDetailsActivity extends AppCompatActivity {
         slotview = findViewById(R.id.slotview);
         final String match_id = getIntent().getStringExtra("match_id");
 
-        slotview.setText("Players: "+slot);
+        slotview.setText("Players: " + slot);
 
         slotview.setOnClickListener(new View.OnClickListener() {
             @Override

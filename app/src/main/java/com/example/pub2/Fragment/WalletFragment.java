@@ -1,4 +1,4 @@
-package com.example.pub2;
+package com.example.pub2.Fragment;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.pub2.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
@@ -25,8 +26,8 @@ public class WalletFragment extends Fragment{
     private String balance;
 
 
-    FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-    DatabaseReference databaseReference =  firebaseDatabase.getReference();
+    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+    private DatabaseReference databaseReference =  firebaseDatabase.getReference();
 
     @Nullable
     @Override

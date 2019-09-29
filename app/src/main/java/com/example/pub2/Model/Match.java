@@ -1,4 +1,4 @@
-package com.example.pub2.model;
+package com.example.pub2.Model;
 
 public class Match {
 

@@ -1,15 +1,15 @@
-package com.example.pub2;
+package com.example.pub2.Activity;
 
 import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.pub2.R;
 import com.firebase.ui.auth.AuthUI;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 

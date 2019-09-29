@@ -1,4 +1,4 @@
-package com.example.pub2;
+package com.example.pub2.Fragment;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -12,8 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.pub2.Adapter.UsersListAdapter;
-import com.example.pub2.model.User;
-import com.google.firebase.database.ChildEventListener;
+import com.example.pub2.Model.User;
+import com.example.pub2.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,8 +28,8 @@ public class UserListFragment extends Fragment {
 
     private RecyclerView userListRecyclerView;
 
-    FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-    DatabaseReference databaseReference =  firebaseDatabase.getReference();
+    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+    private DatabaseReference databaseReference =  firebaseDatabase.getReference();
 
     @Nullable
     @Override
@@ -73,10 +73,5 @@ public class UserListFragment extends Fragment {
         return view;
     }
 
-//    private String getLastSeenStatus(String data) {
-//
-//
-//
-//    }
 
 }

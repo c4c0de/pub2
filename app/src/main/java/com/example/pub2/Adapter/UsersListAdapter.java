@@ -3,14 +3,13 @@ package com.example.pub2.Adapter;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.pub2.R;
-import com.example.pub2.model.User;
+import com.example.pub2.Model.User;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -25,8 +24,6 @@ public class UsersListAdapter extends RecyclerView.Adapter<UsersListAdapter.MyVi
     public UsersListAdapter(List<User> userList, Context context) {
         this.userList = userList;
         this.context = context;
-
-        Log.d("mylog", "List size is: " + userList.size());
     }
 
     @NonNull

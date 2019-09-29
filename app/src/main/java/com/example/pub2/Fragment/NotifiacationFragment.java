@@ -1,4 +1,4 @@
-package com.example.pub2;
+package com.example.pub2.Fragment;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,11 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.pub2.R;
+
 public class NotifiacationFragment extends Fragment{
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_notification, null);
+        return inflater.inflate(R.layout.fragment_notification, container, false);
     }
 }

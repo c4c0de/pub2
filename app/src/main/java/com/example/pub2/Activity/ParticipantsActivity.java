@@ -1,7 +1,9 @@
-package com.example.pub2;
+package com.example.pub2.Activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.pub2.R;
 
 public class ParticipantsActivity extends AppCompatActivity {
 

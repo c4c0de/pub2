@@ -11,9 +11,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.pub2.MatchDetailsActivity;
+import com.example.pub2.Activity.MatchDetailsActivity;
 import com.example.pub2.R;
-import com.example.pub2.model.Match;
+import com.example.pub2.Model.Match;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

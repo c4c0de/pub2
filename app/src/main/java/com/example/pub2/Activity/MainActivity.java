@@ -1,4 +1,4 @@
-package com.example.pub2;
+package com.example.pub2.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,14 +6,14 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
-import android.text.format.Time;
 import android.util.Log;
 import android.view.MenuItem;
-import android.widget.TextView;
-import android.widget.Toolbar;
 
-import com.example.pub2.Adapter.MatchAdapter;
-import com.firebase.ui.auth.AuthUI;
+import com.example.pub2.Fragment.HomeFragment;
+import com.example.pub2.Fragment.NotifiacationFragment;
+import com.example.pub2.Fragment.UserListFragment;
+import com.example.pub2.Fragment.WalletFragment;
+import com.example.pub2.R;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -21,20 +21,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatter;
-import java.util.Arrays;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
-    private Toolbar toolbar;
-
-    FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-    DatabaseReference databaseReference =  firebaseDatabase.getReference();
-    FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+    private DatabaseReference databaseReference =  firebaseDatabase.getReference();
+    private FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
