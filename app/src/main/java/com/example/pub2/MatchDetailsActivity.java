@@ -31,7 +31,7 @@ public class MatchDetailsActivity extends AppCompatActivity {
         slotview = findViewById(R.id.slotview);
         final String match_id = getIntent().getStringExtra("match_id");
 
-        slotview.setText(slot);
+        slotview.setText("Players: "+slot);
 
         slotview.setOnClickListener(new View.OnClickListener() {
             @Override

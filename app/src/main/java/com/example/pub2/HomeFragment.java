@@ -103,6 +103,7 @@ public class HomeFragment extends Fragment {
                     match.setDate(ds.child("date").getValue().toString());
                     match.setTime(ds.child("time").getValue().toString());
                     match.setFee(ds.child("fee").getValue().toString());
+                    match.setSlot(ds.child("slot").getValue().toString());
                     match.setMatchid(ds.getKey());
 
                     list.add(match);

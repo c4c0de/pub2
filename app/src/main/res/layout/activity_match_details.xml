@@ -17,13 +17,12 @@
 
             <TextView
                 android:id="@+id/slotview"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="right"
-                android:text="23/100"
+                android:gravity="end"
+                android:text="50/100"
                 android:textColor="@color/colorPrimary"
-                android:textColorHighlight="@color/colorPrimary"
                 android:textSize="25sp" />
 
         </LinearLayout>

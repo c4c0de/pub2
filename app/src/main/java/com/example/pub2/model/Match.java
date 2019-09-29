@@ -11,6 +11,7 @@ public class Match {
     private String winreward;
     private String fee;
     private String matchid;
+    private String slot;
 
     //Constructors
     public Match() {}
@@ -37,17 +38,11 @@ public class Match {
         return photo;
     }
 
-    public void setPhoto(String photo) {
-        this.photo = photo;
-    }
+    public void setPhoto(String photo) { this.photo = photo; }
 
-    public String getTime() {
-        return time;
-    }
+    public String getTime() { return time;}
 
-    public void setTime(String time) {
-        this.time = time;
-    }
+    public void setTime(String time) { this.time = time; }
 
     public String getDate() {
         return date;
@@ -84,4 +79,9 @@ public class Match {
     public void setMatchid(String matchid) {
         this.matchid = matchid;
     }
+
+    public String getSlot() { return slot;}
+
+    public void setSlot(String slot) { this.slot = "Players: "+ slot + "/100";}
+
 }

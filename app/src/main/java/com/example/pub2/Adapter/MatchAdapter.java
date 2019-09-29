@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,7 +32,7 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.MyViewHolder
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(context).inflate(R.layout.layout_maatch, viewGroup, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.layout_match, viewGroup, false);
         return new MyViewHolder(view);
     }
 
@@ -47,6 +46,7 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.MyViewHolder
         myViewHolder.feeTextview.setText("Entry : ₹" + matchList.get(i).getFee());
         myViewHolder.dateTimeTextView.setText(matchList.get(i).getDate());
         myViewHolder.timeTextView.setText(matchList.get(i).getTime());
+        myViewHolder.slotTextView.setText(matchList.get(i).getSlot());
         myViewHolder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,6 +72,7 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.MyViewHolder
         TextView feeTextview;
         TextView dateTimeTextView;
         TextView timeTextView;
+        TextView slotTextView;
         CardView cardView;
 
         public MyViewHolder(@NonNull View itemView) {
@@ -85,6 +86,7 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.MyViewHolder
             feeTextview = itemView.findViewById(R.id.feeTextView);
             dateTimeTextView = itemView.findViewById(R.id.dateTimeTextView);
             timeTextView = itemView.findViewById(R.id.timeTextView);
+            slotTextView = itemView.findViewById(R.id.slotTextView);
             cardView = itemView.findViewById(R.id.cardview);
 
         }

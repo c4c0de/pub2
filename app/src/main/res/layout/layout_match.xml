@@ -115,6 +115,16 @@
                         android:text="Date" />
 
                     <TextView
+                        android:id="@+id/slotTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="5dp"
+                        android:gravity="center"
+                        android:text="Joined"/>
+
+                    <TextView
                         android:id="@+id/timeTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -122,7 +132,7 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="5dp"
                         android:layout_weight="1"
-                        android:gravity="right"
+                        android:gravity="end"
                         android:text="Time" />
 
                 </LinearLayout>
