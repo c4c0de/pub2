@@ -45,13 +45,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="1.join match on time\n2.\n3.No emulator allowed\n4.\n\n\n\n\n\nn\n\n\n\n\n\n\n\n\n\nfdg\n\n\ndfn\fn\\nn\n\n\ndfn\f\n\n\n\dfndfn\nf\fn"
-                android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/ruleView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp" />
 
             <Button
+                android:id="@+id/registerBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:focusable="false"

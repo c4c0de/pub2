@@ -9,10 +9,13 @@
         android:roundIcon="@drawable/highbrowlogo"
         android:supportsRtl="true"
         android:theme="@style/Base.Theme.AppCompat">
+        <meta-data
+            android:name="com.google.android.gms.wallet.api.enabled"
+            android:value="true"/>
         <activity android:name=".ParticipantsActivity"></activity>
-        <activity android:name=".MatchDetailsActivity" />
-        <activity android:name=".SplashScreenActivity" />
-        <activity android:name=".ProfileCreationActivity" />
+        <activity android:name=".MatchDetailsActivity"/>
+        <activity android:name=".SplashScreenActivity"/>
+        <activity android:name=".ProfileCreationActivity"/>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">

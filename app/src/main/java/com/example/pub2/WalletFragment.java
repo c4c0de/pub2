@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class WalletFragment extends Fragment{
 
-    private TextView balView;
+    private TextView balView, tempView;
 
     private String balance;
 
@@ -33,6 +33,9 @@ public class WalletFragment extends Fragment{
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_wallet, container, false);
         balView = view.findViewById(R.id.balView);
+        tempView = view.findViewById(R.id.tempView);
+
+        tempView.setText("Add Money and Withdrawal are under construction, Currently both are done manually, Whatsapp 9048525224");
 
 
         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
