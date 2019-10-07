@@ -27,6 +27,7 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.MyViewHolder
     public MatchAdapter(Context context, List<Match> matchList) {
         this.context = context;
         this.matchList = matchList;
+
     }
 
     @NonNull
@@ -91,4 +92,6 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.MyViewHolder
 
         }
     }
+
+
 }

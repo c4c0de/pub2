@@ -43,6 +43,8 @@ public class HomeFragment extends Fragment {
     private TextView textView;
     private RecyclerView recyclerView;
 
+    private MatchAdapter matchAdapter;
+
     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     DatabaseReference databaseReference =  firebaseDatabase.getReference();
 
@@ -53,6 +55,8 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        Log.wtf("myTag", "On Create");
 
         if (FirebaseAuth.getInstance().getCurrentUser() == null) {
             startActivity(new Intent(getContext(), SplashScreenActivity.class));
@@ -109,7 +113,7 @@ public class HomeFragment extends Fragment {
                     list.add(match);
                 }
 
-                MatchAdapter matchAdapter = new MatchAdapter(getContext(), list);
+                matchAdapter = new MatchAdapter(getContext(), list);
                 recyclerView.setAdapter(matchAdapter);
             }
 
@@ -122,4 +126,7 @@ public class HomeFragment extends Fragment {
 
         return view;
     }
+
+
+
 }
