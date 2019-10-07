@@ -17,6 +17,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.List;
+
 public class MatchDetailsActivity extends AppCompatActivity {
 
     private Button registerBtn;
@@ -69,7 +71,7 @@ public class MatchDetailsActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 final FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-                databaseReference.child("user").child(firebaseUser.getUid()).addValueEventListener(new ValueEventListener() {
+                databaseReference.child("user").child(firebaseUser.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         balance = dataSnapshot.child("balance").getValue().toString();
@@ -77,8 +79,10 @@ public class MatchDetailsActivity extends AppCompatActivity {
 
                         if (Integer.parseInt(balance) >= Integer.parseInt(fee)){
                              if (Integer.parseInt(slot) <= 100){
+
                                  databaseReference.child("participants").child(match_id)
                                          .child(firebaseUser.getUid()).child("username").setValue(username);
+
                                  int new_balance = Integer.parseInt(balance) - Integer.parseInt(fee);
                                  databaseReference.child("user").child(firebaseUser.getUid()).child("balance").setValue(new_balance);
 
@@ -95,6 +99,7 @@ public class MatchDetailsActivity extends AppCompatActivity {
                                     "Please recharge your wallet", Toast.LENGTH_SHORT).show();
                         }
                     }
+
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
